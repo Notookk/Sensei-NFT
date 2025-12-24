@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function Landing() {
   useEffect(() => {
-    document.title = "DIGITAL KENSEI | Cyberpunk NFT";
+    document.title = "ARI X BOTS | Cyberpunk NFT";
   }, []);
 
   return (
@@ -90,13 +90,13 @@ export default function Landing() {
 
               {/* Main Typography Stack */}
               <div className="flex flex-col mix-blend-normal">
-                {/* DIGI TAL */}
+                {/* ARI X */}
                 <h1 className="font-display font-black leading-[0.8] tracking-tighter select-none relative">
-                  <span className="block text-white text-[16vw] lg:text-[9rem] xl:text-[10.5rem] text-glow-white glitch-wrapper" data-text="DIGI">DIGI</span>
+                  <span className="block text-white text-[16vw] lg:text-[9rem] xl:text-[10.5rem] text-glow-white glitch-wrapper" data-text="ARI">ARI</span>
                   <div className="flex items-start">
-                    <span className="block text-white text-[16vw] lg:text-[9rem] xl:text-[10.5rem] text-glow-white glitch-wrapper" data-text="TAL">TAL</span>
+                    <span className="block text-white text-[16vw] lg:text-[9rem] xl:text-[10.5rem] text-glow-white glitch-wrapper" data-text="X">X</span>
                     
-                    {/* Decorative Kanji Element next to TAL */}
+                    {/* Decorative Kanji Element next to X */}
                     <div className="hidden lg:flex flex-col ml-8 mt-4 gap-2">
                        <div className="w-12 h-12 border border-white/20 flex items-center justify-center bg-black/40 backdrop-blur-sm">
                           <span className="font-jp text-white/80 text-xl">壱</span>
@@ -108,11 +108,11 @@ export default function Landing() {
                   </div>
                 </h1>
                 
-                {/* KEN SEI - Red & Glowing */}
+                {/* BO TS - Red & Glowing */}
                 <div className="relative mt-2 lg:-mt-4 ml-1 lg:ml-2">
                   <h1 className="font-bebas font-normal leading-[0.8] tracking-tight text-[#e10600] select-none mix-blend-screen">
-                    <span className="block text-[20vw] lg:text-[13rem] xl:text-[15rem] text-glow glitch-wrapper" data-text="KEN">KEN</span>
-                    <span className="block text-[20vw] lg:text-[13rem] xl:text-[15rem] text-glow glitch-wrapper" data-text="SEI">SEI</span>
+                    <span className="block text-[20vw] lg:text-[13rem] xl:text-[15rem] text-glow glitch-wrapper" data-text="BO">BO</span>
+                    <span className="block text-[20vw] lg:text-[13rem] xl:text-[15rem] text-glow glitch-wrapper" data-text="TS">TS</span>
                   </h1>
                   
                   {/* Vertical decorative barcode/data strip */}
