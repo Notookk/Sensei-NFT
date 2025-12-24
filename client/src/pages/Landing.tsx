@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function Landing() {
   useEffect(() => {
-    document.title = "ARI X BOTS | Cyberpunk NFT";
+    document.title = "AriXbots | Cyberpunk NFT";
   }, []);
 
   return (
@@ -29,28 +29,28 @@ export default function Landing() {
       <SakuraParticles />
 
       {/* --- Navigation --- */}
-      <nav className="absolute top-0 left-0 w-full z-50 flex justify-between items-center px-8 py-8 md:px-12 mix-blend-difference">
+      <nav className="absolute top-0 left-0 w-full z-50 flex justify-between items-center px-4 py-6 md:px-12 mix-blend-difference">
         <div className="flex items-center gap-3 group cursor-pointer">
           <div className="relative">
             <span className="text-[#e10600] text-3xl font-display group-hover:animate-pulse">✤</span>
             <div className="absolute inset-0 bg-[#e10600] blur-lg opacity-40 group-hover:opacity-80 transition-opacity" />
           </div>
           <div className="flex flex-col">
-            <span className="text-white font-display font-bold text-xl tracking-[0.2em] leading-none">NEXON</span>
+            <span className="text-white font-display font-bold text-xl tracking-[0.2em] leading-none">AriXbots</span>
             <span className="text-white/40 font-sans text-[0.6rem] tracking-[0.4em] uppercase">Cybernetics</span>
           </div>
         </div>
 
-        <div className="flex items-center gap-10">
-          <button className="hidden md:flex items-center gap-2 group relative px-8 py-3 bg-white/5 backdrop-blur-md border border-white/10 text-white font-sans font-semibold text-xs rounded-full hover:bg-[#e10600] hover:border-[#e10600] transition-all duration-300 ease-out shadow-[0_0_15px_rgba(0,0,0,0.5)] hover:shadow-[0_0_30px_rgba(225,6,0,0.6)] tracking-widest uppercase overflow-hidden">
+        <div className="flex items-center gap-6 md:gap-10">
+          <button className="hidden md:flex items-center gap-2 group relative px-8 py-3 bg-white/10 backdrop-blur-md border border-white/20 text-white font-sans font-semibold text-xs rounded-full hover:bg-[#e10600] hover:border-[#e10600] transition-all duration-300 ease-out shadow-[0_0_15px_rgba(0,0,0,0.5)] hover:shadow-[0_0_30px_rgba(225,6,0,0.6)] tracking-widest uppercase overflow-hidden">
             <span className="relative z-10">Explore Collection</span>
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]" />
           </button>
           
-          <button className="text-xs font-sans font-bold tracking-[0.2em] text-white/80 hover:text-[#e10600] transition-colors cursor-pointer flex flex-col items-end gap-1 group">
+          <button className="text-xs font-sans font-bold tracking-[0.2em] text-white hover:text-[#e10600] transition-colors cursor-pointer flex flex-col items-end gap-1 group p-2">
             <span className="group-hover:translate-x-1 transition-transform">MENU</span>
-            <div className="w-8 h-[2px] bg-white/30 group-hover:w-12 group-hover:bg-[#e10600] transition-all" />
-            <div className="w-4 h-[2px] bg-white/30 group-hover:w-8 group-hover:bg-[#e10600] transition-all" />
+            <div className="w-8 h-[2px] bg-white group-hover:w-12 group-hover:bg-[#e10600] transition-all" />
+            <div className="w-4 h-[2px] bg-white group-hover:w-8 group-hover:bg-[#e10600] transition-all" />
           </button>
         </div>
       </nav>
@@ -63,14 +63,15 @@ export default function Landing() {
            <img 
             src={heroImage} 
             alt="Cyberpunk Samurai" 
-            className="w-full h-full object-cover object-center scale-105"
+            className="w-full h-full object-cover object-center scale-100 lg:scale-105"
            />
-           {/* Dark gradient overlay to fade image into black on the left for text readability */}
-           <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-[#050505]/60 to-transparent z-10" />
+           {/* Mobile Optimized Gradients - Less opacity on mobile for clarity */}
+           <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-[#050505]/40 to-transparent z-10 lg:via-[#050505]/60" />
+           <div className="absolute inset-0 bg-gradient-to-b from-[#050505]/50 via-transparent to-[#050505] z-10 lg:hidden" />
         </div>
 
         {/* Content Container */}
-        <div className="w-full max-w-[1600px] mx-auto px-8 md:px-12 grid grid-cols-1 lg:grid-cols-12 h-full relative z-20">
+        <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 h-full relative z-20">
 
           {/* Left Typography Section - MASSIVE & TIGHT */}
           <div className="col-span-1 lg:col-span-6 flex flex-col justify-center pt-20 lg:pt-0">
@@ -90,39 +91,31 @@ export default function Landing() {
 
               {/* Main Typography Stack */}
               <div className="flex flex-col mix-blend-normal">
-                {/* ARI X */}
-                <h1 className="font-display font-black leading-[0.8] tracking-tighter select-none relative">
-                  <span className="block text-white text-[16vw] lg:text-[9rem] xl:text-[10.5rem] text-glow-white glitch-wrapper" data-text="ARI">ARI</span>
-                  <div className="flex items-start">
-                    <span className="block text-white text-[16vw] lg:text-[9rem] xl:text-[10.5rem] text-glow-white glitch-wrapper" data-text="X">X</span>
-                    
-                    {/* Decorative Kanji Element next to X */}
-                    <div className="hidden lg:flex flex-col ml-8 mt-4 gap-2">
-                       <div className="w-12 h-12 border border-white/20 flex items-center justify-center bg-black/40 backdrop-blur-sm">
-                          <span className="font-jp text-white/80 text-xl">壱</span>
-                       </div>
-                       <div className="w-12 h-12 border border-[#e10600]/40 flex items-center justify-center bg-[#e10600]/10 backdrop-blur-sm animate-pulse">
-                          <span className="font-jp text-[#e10600] text-xl">侍</span>
-                       </div>
-                    </div>
+                {/* ARI */}
+                <h1 className="font-display font-black leading-[0.9] tracking-tighter select-none relative">
+                  <span className="block text-white text-[10vw] lg:text-[4rem] xl:text-[5rem] text-glow-white glitch-wrapper" data-text="ARI">ARI</span>
+                </h1>
+                
+                {/* X - Massive Emphasis */}
+                <h1 className="font-display font-black leading-[0.85] tracking-tighter select-none relative -mt-2 lg:-mt-4">
+                  <span className="block text-white text-[25vw] lg:text-[14rem] xl:text-[16rem] text-glow-white glitch-wrapper text-[#e10600]" data-text="X">X</span>
+                  
+                  {/* Decorative Kanji Element next to X - moved for better mobile fit */}
+                  <div className="absolute top-4 right-4 lg:right-auto lg:left-[80%] lg:top-1/4 hidden md:flex flex-col gap-2">
+                      <div className="w-12 h-12 border border-white/20 flex items-center justify-center bg-black/40 backdrop-blur-sm">
+                        <span className="font-jp text-white/80 text-xl">壱</span>
+                      </div>
+                      <div className="w-12 h-12 border border-[#e10600]/40 flex items-center justify-center bg-[#e10600]/10 backdrop-blur-sm animate-pulse">
+                        <span className="font-jp text-[#e10600] text-xl">侍</span>
+                      </div>
                   </div>
                 </h1>
                 
-                {/* BO TS - Red & Glowing */}
-                <div className="relative mt-2 lg:-mt-4 ml-1 lg:ml-2">
+                {/* BOTS - Red & Glowing */}
+                <div className="relative mt-2 lg:-mt-6 ml-1 lg:ml-2">
                   <h1 className="font-bebas font-normal leading-[0.8] tracking-tight text-[#e10600] select-none mix-blend-screen">
-                    <span className="block text-[20vw] lg:text-[13rem] xl:text-[15rem] text-glow glitch-wrapper" data-text="BO">BO</span>
-                    <span className="block text-[20vw] lg:text-[13rem] xl:text-[15rem] text-glow glitch-wrapper" data-text="TS">TS</span>
+                    <span className="block text-[15vw] lg:text-[10rem] xl:text-[12rem] text-glow glitch-wrapper" data-text="BOTS">BOTS</span>
                   </h1>
-                  
-                  {/* Vertical decorative barcode/data strip */}
-                  <div className="absolute top-4 right-4 lg:-right-8 h-[90%] w-12 flex flex-col items-end gap-1 opacity-60">
-                    {Array.from({ length: 12 }).map((_, i) => (
-                      <div key={i} className={`h-1 w-${i % 3 === 0 ? 'full' : i % 2 === 0 ? '2/3' : '1/2'} bg-white/40`} />
-                    ))}
-                    <div className="flex-1 w-[1px] bg-white/20 my-2" />
-                    <span className="font-mono text-[10px] vertical-rl text-white/50 tracking-widest">PROJECT 500</span>
-                  </div>
                 </div>
               </div>
 
@@ -133,12 +126,17 @@ export default function Landing() {
                    <span className="text-white/70 font-sans text-xs tracking-wider">500 UNITS • ETHEREUM MAINNET</span>
                  </div>
               </div>
+              
+              {/* Mobile CTA Button - Visible only on small screens */}
+              <button className="mt-8 flex md:hidden w-full items-center justify-center gap-2 group relative px-8 py-4 bg-[#e10600] text-white font-sans font-bold text-sm rounded-full tracking-widest uppercase shadow-[0_0_20px_rgba(225,6,0,0.4)]">
+                 EXPLORE COLLECTION
+              </button>
 
             </motion.div>
           </div>
 
           {/* Right Section - Empty for visual balance of the background image, but holds the floating card */}
-          <div className="col-span-1 lg:col-span-6 relative pointer-events-none">
+          <div className="col-span-1 lg:col-span-6 relative pointer-events-none hidden lg:block">
              {/* Huge Japanese watermark in background */}
              <div className="absolute top-[10%] right-[-10%] z-0 opacity-30 mix-blend-overlay pointer-events-none">
                 <span className="font-jp font-black text-[20rem] text-white leading-none vertical-rl">無双</span>
