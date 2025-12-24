@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { SakuraParticles } from "../components/SakuraParticles";
-import heroImage from "@assets/generated_images/cyberpunk_samurai_warrior.png";
+import heroImage from "@assets/samurai_1766554648375.jpeg";
 import { motion } from "framer-motion";
 
 export default function Landing() {
