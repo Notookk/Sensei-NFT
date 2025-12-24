@@ -14,21 +14,21 @@ export function SakuraParticles() {
   const [particles, setParticles] = useState<Particle[]>([]);
 
   useEffect(() => {
-    const particleCount = 80; // Increased count for visibility
+    const particleCount = 150; // Massively increased count
     const newParticles = Array.from({ length: particleCount }).map((_, i) => ({
       id: i,
       left: Math.random() * 100,
-      animationDuration: 3 + Math.random() * 8, // Faster fall
+      animationDuration: 4 + Math.random() * 8,
       animationDelay: Math.random() * 5,
-      size: 6 + Math.random() * 8, // Slightly varied sizes
-      type: (Math.random() > 0.4 ? 'petal' : 'snow') as 'petal' | 'snow', // More snow now
+      size: 6 + Math.random() * 10, // Larger size range
+      type: (Math.random() > 0.5 ? 'petal' : 'snow') as 'petal' | 'snow',
       rotationStart: Math.random() * 360,
     }));
     setParticles(newParticles);
   }, []);
 
   return (
-    <div className="sakura-container fixed inset-0 pointer-events-none z-40 overflow-hidden">
+    <div className="sakura-container fixed inset-0 pointer-events-none z-50 overflow-hidden mix-blend-screen">
       {particles.map((p) => (
         <div
           key={p.id}
