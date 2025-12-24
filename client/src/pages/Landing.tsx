@@ -22,6 +22,12 @@ export default function Landing() {
       {/* Noise Texture */}
       <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.12] pointer-events-none mix-blend-overlay z-30" />
       
+      {/* Fog Overlay */}
+      <div className="fog-wrapper">
+        <div className="fog-layer"></div>
+        <div className="fog-layer-2"></div>
+      </div>
+
       {/* Red ambient glow from bottom right */}
       <div className="absolute bottom-0 right-0 w-[80vw] h-[80vh] bg-[radial-gradient(circle_at_bottom_right,rgba(225,6,0,0.15),transparent_70%)] pointer-events-none z-10 blur-[100px]" />
 
