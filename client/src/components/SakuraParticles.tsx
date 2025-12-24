@@ -6,19 +6,23 @@ interface Particle {
   animationDuration: number;
   animationDelay: number;
   size: number;
+  type: 'petal' | 'snow';
+  rotationStart: number;
 }
 
 export function SakuraParticles() {
   const [particles, setParticles] = useState<Particle[]>([]);
 
   useEffect(() => {
-    const particleCount = 30;
+    const particleCount = 50; // Increased count for mixed effect
     const newParticles = Array.from({ length: particleCount }).map((_, i) => ({
       id: i,
       left: Math.random() * 100,
       animationDuration: 5 + Math.random() * 10,
       animationDelay: Math.random() * 5,
-      size: 10 + Math.random() * 15,
+      size: 8 + Math.random() * 12,
+      type: Math.random() > 0.6 ? 'petal' : 'snow', // 40% petals, 60% snow
+      rotationStart: Math.random() * 360,
     }));
     setParticles(newParticles);
   }, []);
@@ -28,13 +32,16 @@ export function SakuraParticles() {
       {particles.map((p) => (
         <div
           key={p.id}
-          className="sakura absolute bg-[#e10600]/60 rounded-tl-[100%] rounded-br-[100%]"
+          className={`particle-base absolute ${
+            p.type === 'petal' ? 'particle-petal' : 'particle-snow'
+          }`}
           style={{
             left: `${p.left}%`,
             width: `${p.size}px`,
-            height: `${p.size}px`,
+            height: `${p.type === 'petal' ? p.size : p.size * 0.6}px`, // Snow slightly smaller
             animation: `fall ${p.animationDuration}s linear infinite`,
             animationDelay: `${p.animationDelay}s`,
+            transform: `rotate(${p.rotationStart}deg)`,
           }}
         />
       ))}
