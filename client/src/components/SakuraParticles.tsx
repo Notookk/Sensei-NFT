@@ -21,7 +21,7 @@ export function SakuraParticles() {
       animationDuration: 5 + Math.random() * 10,
       animationDelay: Math.random() * 5,
       size: 8 + Math.random() * 12,
-      type: Math.random() > 0.6 ? 'petal' : 'snow', // 40% petals, 60% snow
+      type: (Math.random() > 0.6 ? 'petal' : 'snow') as 'petal' | 'snow',
       rotationStart: Math.random() * 360,
     }));
     setParticles(newParticles);
