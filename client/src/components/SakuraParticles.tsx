@@ -1,50 +1,87 @@
-import { useEffect, useState } from 'react';
-
-interface Particle {
-  id: number;
-  left: number;
-  animationDuration: number;
-  animationDelay: number;
-  size: number;
-  type: 'petal' | 'snow';
-  rotationStart: number;
-}
+import { useEffect, useRef } from 'react';
 
 export function SakuraParticles() {
-  const [particles, setParticles] = useState<Particle[]>([]);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const particleCount = 150; // Massively increased count
-    const newParticles = Array.from({ length: particleCount }).map((_, i) => ({
-      id: i,
-      left: Math.random() * 100,
-      animationDuration: 4 + Math.random() * 8,
-      animationDelay: Math.random() * 5,
-      size: 6 + Math.random() * 10, // Larger size range
-      type: (Math.random() > 0.5 ? 'petal' : 'snow') as 'petal' | 'snow',
-      rotationStart: Math.random() * 360,
-    }));
-    setParticles(newParticles);
+    const container = containerRef.current;
+    if (!container) return;
+
+    // Create particles
+    const particles: HTMLDivElement[] = [];
+    
+    for (let i = 0; i < 30; i++) {
+      const particle = document.createElement('div');
+      const size = 4 + Math.random() * 4;
+      const top = 10 + Math.random() * 70;
+      const duration = 12 + Math.random() * 18;
+      const delay = Math.random() * 8;
+      const isRed = Math.random() > 0.5;
+      
+      particle.style.cssText = `
+        position: absolute;
+        width: ${size}px;
+        height: ${size}px;
+        top: ${top}%;
+        left: -10px;
+        background: ${isRed ? '#ff0000' : '#ffffff'};
+        border-radius: 50%;
+        box-shadow: 0 0 10px ${isRed ? '#ff0000' : '#ffffff'};
+        animation: particleMove ${duration}s linear ${delay}s infinite;
+      `;
+      
+      container.appendChild(particle);
+      particles.push(particle);
+    }
+
+    return () => {
+      particles.forEach(p => p.remove());
+    };
   }, []);
 
   return (
-    <div className="sakura-container fixed inset-0 pointer-events-none z-50 overflow-hidden mix-blend-screen">
-      {particles.map((p) => (
-        <div
-          key={p.id}
-          className={`particle-base absolute ${
-            p.type === 'petal' ? 'particle-petal' : 'particle-snow'
-          }`}
-          style={{
-            left: `${p.left}%`,
-            width: `${p.size}px`,
-            height: `${p.size}px`, 
-            animation: `fall ${p.animationDuration}s linear infinite`,
-            animationDelay: `${p.animationDelay}s`,
-            transform: `rotate(${p.rotationStart}deg)`,
-          }}
-        />
-      ))}
-    </div>
+    <>
+      <style>{`
+        @keyframes particleMove {
+          0% { left: -10px; opacity: 1; }
+          100% { left: calc(100vw + 10px); opacity: 1; }
+        }
+      `}</style>
+      <div 
+        ref={containerRef}
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          pointerEvents: 'none',
+          zIndex: 15,
+          overflow: 'hidden',
+        }}
+      >
+        {/* Static test dots to verify component renders */}
+        <div style={{
+          position: 'absolute',
+          top: '20%',
+          left: '50%',
+          width: '20px',
+          height: '20px',
+          background: '#ff0000',
+          borderRadius: '50%',
+          boxShadow: '0 0 20px #ff0000',
+        }} />
+        <div style={{
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          width: '20px',
+          height: '20px',
+          background: '#ffffff',
+          borderRadius: '50%',
+          boxShadow: '0 0 20px #ffffff',
+        }} />
+      </div>
+    </>
   );
 }
